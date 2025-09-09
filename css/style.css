@@ -1,104 +1,25 @@
-/* Estilos Gerais */
+/* Importa as fontes do corpo e dos títulos */
 body {
-    font-family: 'Helvetica', 'Arial', sans-serif;
-    line-height: 1.6;
-    margin: 0;
-    padding: 0;
-    background-color: #f4f4f4;
-    color: #333;
+    font-family: 'Inter', sans-serif;
 }
 
-/* Cabeçalho */
-header {
-    background-color: #000000; 
-    color: #ffffff;
-    padding: 1.5rem 1rem;
+.font-montserrat {
+    font-family: 'Montserrat', sans-serif;
 }
 
-.header-container {
-    display: flex;
-    align-items: center;
-    justify-content: center; /* deixa tudo centralizado no header */
-    gap: 15px;
-    flex-wrap: wrap; /* adapta em telas menores */
+/* Efeito de scroll suave */
+html {
+    scroll-behavior: smooth;
 }
 
-.logo {
-    width: 80px; /* ajusta o tamanho da logo */
-    border-radius: 8px; /* opcional: cantos arredondados */
+/* Animação de fade-in para as seções */
+.fade-in {
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 0.8s ease-out, transform 0.8s ease-out;
 }
 
-header h1 {
-    font-family: 'Cinzel', serif;
-    font-size: 2.5rem;
-    font-weight: 700;
-    margin: 0;
+.fade-in.visible {
+    opacity: 1;
+    transform: translateY(0);
 }
-
-
-header p {
-    font-size: 1.1rem;
-    margin: 0;
-}
-
-/* Conteúdo Principal */
-main {
-    max-width: 800px;
-    margin: 2rem auto;
-    padding: 2rem;
-    background-color: #ffffff;
-    box-shadow: 0 0 10px rgba(0,0,0,0.1);
-    text-align: center;
-}
-
-main h2 {
-    color: #2c3e50;
-}
-
-/* Estilo do Botão (Call-to-Action) */
-.cta-button {
-    display: inline-block;
-    background-color: #b38600; /* Tom dourado/bronze */
-    color: #ffffff;
-    padding: 15px 30px;
-    text-decoration: none;
-    font-size: 1.1rem;
-    font-weight: bold;
-    border-radius: 5px;
-    margin-top: 20px;
-    transition: background-color 0.3s ease;
-}
-
-.cta-button:hover {
-    background-color: #8c6a00; /* Tom mais escuro no hover */
-}
-
-.typewriter {
-  display: inline-block;
-  overflow: hidden;             /* esconde o texto até ser revelado */
-  border-right: .15em solid #fff; /* cursor piscando */
-  white-space: nowrap;          /* não quebra linha */
-  letter-spacing: .05em;
-  animation: typing 4s steps(40, end), blink .75s step-end infinite;
-}
-
-@keyframes typing {
-  from { width: 0 }
-  to { width: 100% }
-}
-
-@keyframes blink {
-  from, to { border-color: transparent }
-  50% { border-color: #fff }
-}
-
-
-/* Rodapé */
-footer {
-    text-align: center;
-    padding: 1.5rem;
-    background-color: #333;
-    color: #ffffff;
-    font-size: 0.9rem;
-}
-

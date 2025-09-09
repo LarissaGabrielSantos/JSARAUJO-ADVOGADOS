@@ -1,41 +1,163 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>JS ARAUJO ADVOGADOS</title>
-  <link rel="stylesheet" href="../css/style.css">
-  <link rel="script" href="../js/script.js">
-  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@700&display=swap" rel="stylesheet">
-
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JS Araújo Advogados - Assessoria Jurídica</title>
+    
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700;900&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+    
+    <!-- Link para seu arquivo CSS -->
+    <link rel="stylesheet" href="../css/style.css">
 </head>
-<body>
-<header>
-  <div class="header-container">
-    <img src="../assets/img/logo.jpg" alt="logo Advogados" class="logo">
-    <div>
-      <h1>JS Araujo Advogados</h1>
-      <p class="typewriter">Soluções jurídicas com seriedade e competência.</p>
-    </div>
-  </div>
-</header>
+<body class="bg-gray-900 text-gray-200">
 
+    <!-- Cabeçalho -->
+    <header class="bg-black/80 backdrop-blur-sm fixed top-0 left-0 right-0 z-50 transition-all duration-300">
+        <div class="container mx-auto px-6 py-3 flex justify-between items-center">
+            <!-- Logo e Nome -->
+            <a href="#inicio" class="flex items-center space-x-3">
+                <img src="../assets/img/logosite.png" alt="Logo JS Araújo Advogados" class="h-12 w-12 rounded-full">
+                <span class="text-xl font-semibold text-white">JS Araújo Advogados</span>
+            </a>
 
-  <main>
-    <h2>Precisa de Ajuda Jurídica?</h2>
-    <p>
-      Entre em contato conosco para agendar uma consulta inicial. 
-      Nossa equipe de especialistas está pronta para analisar o seu caso 
-      e oferecer a melhor estratégia.
-    </p>
-    <a href="" target="_blank" class="cta-button"> <!-- Link wpp -->
-      Fale Conosco e Agende sua Consulta
+            <!-- Navegação (Desktop) -->
+            <nav class="hidden md:flex items-center space-x-8">
+                <a href="#inicio" class="text-gray-300 hover:text-amber-400 transition">Início</a>
+                <a href="#sobre" class="text-gray-300 hover:text-amber-400 transition">Sobre Nós</a>
+                <a href="#servicos" class="text-gray-300 hover:text-amber-400 transition">Serviços</a>
+                <a href="#app" class="text-gray-300 hover:text-amber-400 transition">Baixe o App</a>
+                <a href="#contato" class="bg-amber-500 text-black px-5 py-2 rounded-md font-semibold hover:bg-amber-600 transition">Contato</a>
+            </nav>
+
+            <!-- Botão do Menu (Mobile) -->
+            <button id="menu-btn" class="md:hidden text-white focus:outline-none">
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7" />
+                </svg>
+            </button>
+        </div>
+
+        <!-- Menu (Mobile) -->
+        <div id="mobile-menu" class="hidden md:hidden bg-black/90">
+            <a href="#inicio" class="block py-3 px-6 text-white hover:bg-amber-500 hover:text-black">Início</a>
+            <a href="#sobre" class="block py-3 px-6 text-white hover:bg-amber-500 hover:text-black">Sobre Nós</a>
+            <a href="#servicos" class="block py-3 px-6 text-white hover:bg-amber-500 hover:text-black">Serviços</a>
+            <a href="#app" class="block py-3 px-6 text-white hover:bg-amber-500 hover:text-black">Baixe o App</a>
+            <a href="#contato" class="block py-3 px-6 text-white hover:bg-amber-500 hover:text-black">Contato</a>
+        </div>
+    </header>
+
+    <main>
+        <!-- Seção Inicial (Hero) -->
+        <section id="inicio" class="relative h-screen flex items-center justify-center text-white text-center fade-in bg-black">
+             <!-- Fundo com a logo -->
+            <img src="../assets/img/logoapp.png" class="absolute inset-0 w-full h-full object-contain opacity-20" alt="Logo de fundo">
+            
+            <div class="relative z-10 px-4">
+                <h1 class="font-montserrat font-black text-5xl md:text-8xl lg:text-9xl uppercase tracking-wider">
+                    <span class="block text-amber-400">Advocacia</span>
+                </h1>
+                <p class="text-lg md:text-xl mt-6 mb-8 max-w-2xl mx-auto text-gray-300">Compromisso, ética e excelência na defesa dos seus direitos.</p>
+                <a href="#contato" class="bg-amber-500 text-black px-8 py-3 rounded-md text-lg font-semibold hover:bg-amber-600 transition transform hover:scale-105">Entre em Contato</a>
+            </div>
+        </section>
+
+        <!-- Seção Sobre Nós -->
+        <section id="sobre" class="py-24 bg-gray-900 fade-in">
+            <div class="container mx-auto px-6 text-center">
+                <h2 class="text-4xl font-bold font-montserrat text-white mb-4">Sobre Nosso Escritório</h2>
+                <div class="w-24 h-1 bg-amber-500 mx-auto mb-8"></div>
+                <p class="text-lg text-gray-400 max-w-3xl mx-auto">
+                    Com anos de experiência e uma equipe de advogados altamente qualificados, nosso escritório se dedica a oferecer soluções jurídicas eficazes e personalizadas. Atuamos com integridade e paixão pela justiça, buscando sempre os melhores resultados para nossos clientes em diversas áreas do direito.
+                </p>
+            </div>
+        </section>
+        
+        <!-- Seção de Serviços -->
+        <section id="servicos" class="py-24 bg-black fade-in">
+            <div class="container mx-auto px-6">
+                <div class="text-center mb-12">
+                    <h2 class="text-4xl font-bold font-montserrat text-white">Nossas principais áreas de atuação</h2>
+                    <div class="w-24 h-1 bg-amber-500 mx-auto mt-4"></div>
+                </div>
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                    <!-- Card de Serviço 1 -->
+                    <div class="bg-gray-800 p-8 rounded-lg shadow-lg text-center transform hover:-translate-y-2 transition-transform duration-300">
+                        <h3 class="text-2xl font-bold text-amber-400 mb-4">Direito Criminal</h3>
+                        <p class="text-gray-400">Defesa completa em todas as fases do processo criminal, desde o inquérito policial até os tribunais superiores. Atuação estratégica para garantir seus direitos e sua liberdade.</p>
+                    </div>
+                    <!-- Card de Serviço 2 -->
+                    <div class="bg-gray-800 p-8 rounded-lg shadow-lg text-center transform hover:-translate-y-2 transition-transform duration-300">
+                        <h3 class="text-2xl font-bold text-amber-400 mb-4">Direito Civil</h3>
+                        <p class="text-gray-400">Soluções para questões de contratos, obrigações, responsabilidade civil, família e sucessões, buscando a resolução de conflitos de forma eficiente.</p>
+                    </div>
+                    <!-- Card de Serviço 3 -->
+                    <div class="bg-gray-800 p-8 rounded-lg shadow-lg text-center transform hover:-translate-y-2 transition-transform duration-300">
+                        <h3 class="text-2xl font-bold text-amber-400 mb-4">Direito Empresarial</h3>
+                        <p class="text-gray-400">Assessoria jurídica para empresas, abrangendo desde a constituição e estruturação societária até a gestão de contratos e litígios comerciais.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Seção Baixe o App -->
+        <section id="app" class="py-24 bg-gray-900 text-center fade-in">
+             <div class="container mx-auto px-6">
+                <h2 class="text-4xl font-bold font-montserrat text-white mb-4">Acompanhe seu Caso na Palma da Mão</h2>
+                <div class="w-24 h-1 bg-amber-500 mx-auto mb-8"></div>
+                <p class="text-lg text-gray-400 max-w-3xl mx-auto mb-8">
+                    Baixe nosso aplicativo exclusivo para clientes e tenha acesso rápido e seguro às atualizações do seu processo.*
+                </p>
+                <p class="text-lg text-gray-400 max-w-3xl mx-auto mb-8">
+                    *Em breve disponível para IOS.
+                </p>
+                <!-- Substitua '#' pelo link do seu arquivo APK -->
+                <a href="#" class="bg-amber-500 text-black px-8 py-4 rounded-md text-lg font-semibold hover:bg-amber-600 transition transform hover:scale-105 inline-block">
+                    Baixar Aplicativo (Android)
+                </a>
+            </div>
+        </section>
+
+        <!-- Seção de Contato WhatsApp -->
+        <section id="contato" class="py-24 bg-black text-center fade-in">
+             <div class="container mx-auto px-6">
+                <h2 class="text-4xl font-bold font-montserrat text-white mb-4">Entre em Contato</h2>
+                 <div class="w-24 h-1 bg-amber-500 mx-auto mb-8"></div>
+                <p class="text-lg text-gray-400 max-w-3xl mx-auto mb-8">
+                    Precisa de ajuda? Clique no botão abaixo para iniciar uma conversa conosco diretamente no WhatsApp.
+                </p>
+                <!-- Substitua '#' pelo seu link do WhatsApp -->
+                <a href="#" target="_blank" class="bg-green-500 text-white px-8 py-4 rounded-md text-lg font-semibold hover:bg-green-600 transition transform hover:scale-105 inline-flex items-center space-x-2">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" viewBox="0 0 24 24" fill="currentColor"><path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.894 11.892-1.99-.001-3.951-.5-5.688-1.448l-6.305 1.654zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.886-.001 2.225.651 3.891 1.746 5.634l-.999 3.648 3.742-.981zm11.387-5.464c-.074-.124-.272-.198-.57-.347-.297-.149-1.758-.868-2.031-.967-.272-.099-.47-.149-.669.149-.198.297-.768.967-.941 1.165-.173.198-.347.223-.644.074-.297-.149-1.255-.462-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.297-.347.458-.518.16-.173.21-.297.318-.495.108-.198.054-.371-.024-.52s-.669-1.612-.916-2.207c-.242-.582-.484-.5-.669-.508-.182-.01-.381-.01-.579-.01s-.504.074-.768.371c-.264.297-1.013.989-1.013 2.416 0 1.427 1.037 2.806 1.185 3.004.149.198 2.083 3.19 5.053 4.482.71.306 1.262.489 1.694.626.712.227 1.36.194 1.872.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.29.173-1.414z"/></svg>
+                    <span>Conversar no WhatsApp</span>
+                </a>
+            </div>
+        </section>
+    </main>
+
+    <!-- Rodapé -->
+    <footer class="bg-black py-6">
+        <div class="container mx-auto px-6 text-center text-gray-500">
+            <p>&copy; 2024 JS Araújo Advogados. Todos os direitos reservados.</p>
+            <p class="text-sm mt-2">Desenvolvido com excelência para a sua necessidade.</p>
+        </div>
+    </footer>
+
+    <!-- Ícone Flutuante do WhatsApp -->
+    <!-- Substitua '#' pelo seu link do WhatsApp -->
+    <a href="#" target="_blank" class="fixed bottom-6 right-6 bg-green-500 text-white p-4 rounded-full shadow-lg hover:bg-green-600 transition-transform transform hover:scale-110 z-50">
+        <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8" viewBox="0 0 24 24" fill="currentColor"><path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.894 11.892-1.99-.001-3.951-.5-5.688-1.448l-6.305 1.654zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.886-.001 2.225.651 3.891 1.746 5.634l-.999 3.648 3.742-.981zm11.387-5.464c-.074-.124-.272-.198-.57-.347-.297-.149-1.758-.868-2.031-.967-.272-.099-.47-.149-.669.149-.198.297-.768.967-.941 1.165-.173.198-.347.223-.644.074-.297-.149-1.255-.462-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.297-.347.458-.518.16-.173.21-.297.318-.495.108-.198.054-.371-.024-.52s-.669-1.612-.916-2.207c-.242-.582-.484-.5-.669-.508-.182-.01-.381-.01-.579-.01s-.504.074-.768.371c-.264.297-1.013.989-1.013 2.416 0 1.427 1.037 2.806 1.185 3.004.149.198 2.083 3.19 5.053 4.482.71.306 1.262.489 1.694.626.712.227 1.36.194 1.872.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.29.173-1.414z"/></svg>
     </a>
-  </main>
 
-  <footer>
-    <p>&copy; 2025 JS Araujo Advogados | Todos os direitos reservados.</p>
-    <p>Rua Nilton de Souza Filho, Paciência - Rio de Janeiro, RJ</p>
-  </footer>
+    <!-- Link para seu arquivo JavaScript -->
+    <script src="../js/script.js"></script>
+
 </body>
 </html>
