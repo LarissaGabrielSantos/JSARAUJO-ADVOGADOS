@@ -1,4 +1,3 @@
-/* Importa as fontes do corpo e dos títulos */
 body {
     font-family: 'Inter', sans-serif;
 }
@@ -7,12 +6,10 @@ body {
     font-family: 'Montserrat', sans-serif;
 }
 
-/* Efeito de scroll suave */
 html {
     scroll-behavior: smooth;
 }
 
-/* Animação de fade-in para as seções */
 .fade-in {
     opacity: 0;
     transform: translateY(20px);
