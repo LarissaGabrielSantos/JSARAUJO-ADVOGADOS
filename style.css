@@ -1,5 +1,16 @@
+/* ==================================== */
+/* 1. Ajustes Globais e Tipografia      */
+/* ==================================== */
+
+/* Ajuste do box-sizing para facilitar o cálculo de largura/padding */
+*, *::before, *::after {
+    box-sizing: border-box;
+}
+
 body {
     font-family: 'Inter', sans-serif;
+    margin: 0; /* Remove a margem padrão do navegador */
+    padding: 0;
 }
 
 .font-montserrat {
@@ -8,8 +19,54 @@ body {
 
 html {
     scroll-behavior: smooth;
+    /* Garante que o padding não cause problemas de rolagem lateral */
+    overflow-x: hidden; 
 }
 
+/* Garante que imagens e vídeos se ajustem ao contêiner, nunca o estourando */
+img, video {
+    max-width: 100%;
+    height: auto;
+    display: block;
+}
+
+/* O contêiner principal do site: flexível e centralizado */
+.container {
+    width: 90%; /* Usa 90% da largura da tela */
+    max-width: 1200px; /* Largura máxima para telas grandes */
+    margin: 0 auto; /* Centraliza o conteúdo */
+    padding: 20px 0;
+}
+
+
+/* ==================================== */
+/* 2. Regras de Estrutura BASE          */
+/* ==================================== */
+
+/* Exemplo de Layout Flexível para o Menu (Use as classes do Tailwind no HTML se for o caso) */
+.header-nav ul {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+/* Exemplo de Seção com Colunas */
+.secao-de-colunas {
+    display: flex;
+    flex-wrap: wrap; 
+    gap: 20px; 
+}
+
+.coluna-item {
+    /* Torna o item flexível para ocupar o espaço necessário */
+    flex: 1 1 300px; 
+}
+
+
+/* Suas regras de animação */
 .fade-in {
     opacity: 0;
     transform: translateY(20px);
@@ -19,4 +76,49 @@ html {
 .fade-in.visible {
     opacity: 1;
     transform: translateY(0);
+}
+/* ==================================== */
+/* MEDIA QUERY: SMARTPHONES (máx. 768px) */
+/* ==================================== */
+
+@media (max-width: 768px) {
+    
+    /* Corrige o problema do padding do container no mobile */
+    .container {
+        /* Reduz o padding horizontal para dar mais espaço ao conteúdo */
+        padding-left: 15px; 
+        padding-right: 15px;
+        width: 100%; /* Garante que o container use toda a largura disponível */
+    }
+
+    /* Menu: Transforma a linha horizontal em coluna vertical */
+    .header-nav ul {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+        padding: 10px 0;
+    }
+    
+    .header-nav ul li {
+        margin: 10px 0;
+    }
+
+    /* Seções de Colunas: Força o empilhamento vertical */
+    .secao-de-colunas,
+    .secao-advogados, /* Mantenha se estas classes realmente existirem no seu HTML */
+    .rodape-colunas /* Mantenha se estas classes realmente existirem no seu HTML */
+    {
+        flex-direction: column;
+        /* Removido o gap: 0; para permitir espaçamento vertical entre os itens */
+    }
+    
+    /* Itens Internos: Ocupam 100% da largura em telas pequenas */
+    .coluna-item,
+    .card {
+        flex: 1 1 100%; /* Garante que o item ocupe a largura total */
+        width: 100%;
+        margin-bottom: 20px; /* Adiciona espaçamento vertical para respiro */
+    }
+    
+    /* Removida a regra h1, pois o Tailwind (classes text-4xl, etc.) deve cuidar disso no HTML. */
 }
