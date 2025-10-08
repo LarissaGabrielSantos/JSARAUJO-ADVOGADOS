@@ -155,3 +155,233 @@ video {
         transform: translateY(0);
     }
 }
+/* ==================================== */
+/* 1. Ajustes Globais e Tipografia      */
+/* ==================================== */
+
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Inter', sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+.font-montserrat {
+    font-family: 'Montserrat', sans-serif;
+}
+
+html {
+    scroll-behavior: smooth;
+    overflow-x: hidden;
+}
+
+img,
+video {
+    max-width: 100%;
+    height: auto;
+    display: block;
+}
+
+.container {
+    width: 90%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px 0;
+}
+
+/* ==================================== */
+/* 2. Regras de Estrutura BASE          */
+/* ==================================== */
+
+.header-nav ul {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.secao-de-colunas {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+
+.coluna-item {
+    flex: 1 1 300px;
+}
+
+.fade-in {
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+}
+
+.fade-in.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* ==================================== */
+/* MEDIA QUERY: SMARTPHONES (máx. 768px) */
+/* ==================================== */
+
+@media (max-width: 768px) {
+
+    .container {
+        padding-left: 15px;
+        padding-right: 15px;
+        width: 100%;
+    }
+
+    .header-nav ul {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+        padding: 10px 0;
+    }
+
+    .header-nav ul li {
+        margin: 10px 0;
+    }
+
+    .secao-de-colunas,
+    .secao-advogados,
+    .rodape-colunas {
+        flex-direction: column;
+    }
+
+    .coluna-item,
+    .card {
+        flex: 1 1 100%;
+        width: 100%;
+        margin-bottom: 20px;
+    }
+}
+
+/* ==================================== */
+/* 3. Fade + Slide Animation            */
+/* ==================================== */
+
+.fade-slide-in {
+    opacity: 0;
+    transform: translateY(40px);
+    animation: fadeSlideIn 1.4s ease-out forwards;
+}
+
+@keyframes fadeSlideIn {
+    0% {
+        opacity: 0;
+        transform: translateY(40px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* ==================================== */
+/* 4. Estilo específico do formulário   */
+/* ==================================== */
+
+.fale-conosco {
+    padding: 60px 0;
+    background-color: #f9f9f9;
+}
+
+.fale-conosco h1 {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 2.5rem;
+    margin-bottom: 20px;
+    color: #111;
+    text-align: center;
+}
+
+.formulario-contato {
+    background-color: #fff;
+    padding: 30px;
+    border-radius: 12px;
+    box-shadow: 0 8px 20px rgba(0,0,0,0.1);
+    max-width: 700px;
+    margin: 0 auto;
+}
+
+.formulario-contato label {
+    display: block;
+    font-weight: 600;
+    margin-bottom: 5px;
+    color: #333;
+}
+
+.formulario-contato input,
+.formulario-contato textarea {
+    width: 100%;
+    padding: 12px 15px;
+    margin-bottom: 20px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    font-size: 1rem;
+    font-family: 'Inter', sans-serif;
+}
+
+.formulario-contato textarea {
+    resize: vertical;
+    min-height: 120px;
+}
+
+.formulario-contato button {
+    display: inline-block;
+    padding: 12px 30px;
+    font-size: 1rem;
+    font-weight: 600;
+    color: #fff;
+    background-color: #f59e0b;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.formulario-contato button:hover {
+    background-color: #d97706;
+}
+
+/* Informações de contato adicionais */
+.contato-info {
+    max-width: 700px;
+    margin: 40px auto 0;
+    text-align: center;
+    font-size: 1rem;
+    color: #555;
+}
+
+.contato-info p {
+    margin: 5px 0;
+}
+
+.contato-info a {
+    color: #f59e0b;
+    text-decoration: none;
+    font-weight: 600;
+}
+
+.contato-info a:hover {
+    text-decoration: underline;
+}
+
+/* Responsivo para formulário */
+@media (max-width: 768px) {
+    .fale-conosco h1 {
+        font-size: 2rem;
+    }
+
+    .formulario-contato {
+        padding: 20px;
+    }
+}
