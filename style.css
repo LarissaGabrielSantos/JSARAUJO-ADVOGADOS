@@ -122,3 +122,20 @@ img, video {
     
     /* Removida a regra h1, pois o Tailwind (classes text-4xl, etc.) deve cuidar disso no HTML. */
 }
+/* === EFEITO DE ENTRADA SUAVE (FADE + SLIDE) === */
+.fade-slide-in {
+  opacity: 0;
+  transform: translateY(40px);
+  animation: fadeSlideIn 1.4s ease-out forwards;
+}
+
+@keyframes fadeSlideIn {
+  0% {
+    opacity: 0;
+    transform: translateY(40px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
