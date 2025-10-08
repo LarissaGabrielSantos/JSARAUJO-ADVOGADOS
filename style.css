@@ -3,13 +3,16 @@
 /* ==================================== */
 
 /* Ajuste do box-sizing para facilitar o cálculo de largura/padding */
-*, *::before, *::after {
+*,
+*::before,
+*::after {
     box-sizing: border-box;
 }
 
 body {
     font-family: 'Inter', sans-serif;
-    margin: 0; /* Remove a margem padrão do navegador */
+    margin: 0;
+    /* Remove a margem padrão do navegador */
     padding: 0;
 }
 
@@ -20,11 +23,12 @@ body {
 html {
     scroll-behavior: smooth;
     /* Garante que o padding não cause problemas de rolagem lateral */
-    overflow-x: hidden; 
+    overflow-x: hidden;
 }
 
 /* Garante que imagens e vídeos se ajustem ao contêiner, nunca o estourando */
-img, video {
+img,
+video {
     max-width: 100%;
     height: auto;
     display: block;
@@ -32,9 +36,12 @@ img, video {
 
 /* O contêiner principal do site: flexível e centralizado */
 .container {
-    width: 90%; /* Usa 90% da largura da tela */
-    max-width: 1200px; /* Largura máxima para telas grandes */
-    margin: 0 auto; /* Centraliza o conteúdo */
+    width: 90%;
+    /* Usa 90% da largura da tela */
+    max-width: 1200px;
+    /* Largura máxima para telas grandes */
+    margin: 0 auto;
+    /* Centraliza o conteúdo */
     padding: 20px 0;
 }
 
@@ -56,13 +63,13 @@ img, video {
 /* Exemplo de Seção com Colunas */
 .secao-de-colunas {
     display: flex;
-    flex-wrap: wrap; 
-    gap: 20px; 
+    flex-wrap: wrap;
+    gap: 20px;
 }
 
 .coluna-item {
     /* Torna o item flexível para ocupar o espaço necessário */
-    flex: 1 1 300px; 
+    flex: 1 1 300px;
 }
 
 
@@ -77,18 +84,20 @@ img, video {
     opacity: 1;
     transform: translateY(0);
 }
+
 /* ==================================== */
 /* MEDIA QUERY: SMARTPHONES (máx. 768px) */
 /* ==================================== */
 
 @media (max-width: 768px) {
-    
+
     /* Corrige o problema do padding do container no mobile */
     .container {
         /* Reduz o padding horizontal para dar mais espaço ao conteúdo */
-        padding-left: 15px; 
+        padding-left: 15px;
         padding-right: 15px;
-        width: 100%; /* Garante que o container use toda a largura disponível */
+        width: 100%;
+        /* Garante que o container use toda a largura disponível */
     }
 
     /* Menu: Transforma a linha horizontal em coluna vertical */
@@ -98,44 +107,51 @@ img, video {
         text-align: center;
         padding: 10px 0;
     }
-    
+
     .header-nav ul li {
         margin: 10px 0;
     }
 
     /* Seções de Colunas: Força o empilhamento vertical */
     .secao-de-colunas,
-    .secao-advogados, /* Mantenha se estas classes realmente existirem no seu HTML */
-    .rodape-colunas /* Mantenha se estas classes realmente existirem no seu HTML */
-    {
+    .secao-advogados,
+    /* Mantenha se estas classes realmente existirem no seu HTML */
+    .rodape-colunas
+
+    /* Mantenha se estas classes realmente existirem no seu HTML */
+        {
         flex-direction: column;
         /* Removido o gap: 0; para permitir espaçamento vertical entre os itens */
     }
-    
+
     /* Itens Internos: Ocupam 100% da largura em telas pequenas */
     .coluna-item,
     .card {
-        flex: 1 1 100%; /* Garante que o item ocupe a largura total */
+        flex: 1 1 100%;
+        /* Garante que o item ocupe a largura total */
         width: 100%;
-        margin-bottom: 20px; /* Adiciona espaçamento vertical para respiro */
+        margin-bottom: 20px;
+        /* Adiciona espaçamento vertical para respiro */
     }
-    
+
     /* Removida a regra h1, pois o Tailwind (classes text-4xl, etc.) deve cuidar disso no HTML. */
 }
+
 /* === EFEITO DE ENTRADA SUAVE (FADE + SLIDE) === */
 .fade-slide-in {
-  opacity: 0;
-  transform: translateY(40px);
-  animation: fadeSlideIn 1.4s ease-out forwards;
+    opacity: 0;
+    transform: translateY(40px);
+    animation: fadeSlideIn 1.4s ease-out forwards;
 }
 
 @keyframes fadeSlideIn {
-  0% {
-    opacity: 0;
-    transform: translateY(40px);
-  }
-  100% {
-    opacity: 1;
-    transform: translateY(0);
-  }
+    0% {
+        opacity: 0;
+        transform: translateY(40px);
+    }
+
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
 }
