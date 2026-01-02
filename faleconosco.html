@@ -1,281 +1,462 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
-
-<head>
+  <head>
     <!-- Google tag (gtag.js) -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=AW-17764060680"></script>
+    <script
+      async
+      src="https://www.googletagmanager.com/gtag/js?id=AW-17764060680"
+    ></script>
     <script>
-        window.dataLayer = window.dataLayer || [];
-        function gtag() { dataLayer.push(arguments); }
-        gtag('js', new Date());
+      window.dataLayer = window.dataLayer || [];
+      function gtag() {
+        dataLayer.push(arguments);
+      }
+      gtag("js", new Date());
 
-        gtag('config', 'AW-17764060680');
+      gtag("config", "AW-17764060680");
     </script>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Fale Conosco - JS Araújo Advogados</title>
 
-    <link rel="icon" type="image/png" href="assets/img/logosite.png">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    <link rel="icon" type="image/png" href="assets/img/logosite.png" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
+    />
     <script src="https://cdn.tailwindcss.com"></script>
 
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
-        href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700;900&family=Inter:wght@400;500;600&display=swap"
-        rel="stylesheet">
+      href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700;900&family=Inter:wght@400;500;600&display=swap"
+      rel="stylesheet"
+    />
 
-    <link rel="stylesheet" href="style.css">
-</head>
+    <link rel="stylesheet" href="style.css" />
+  </head>
 
-<body class="bg-gray-900 text-gray-200">
-
+  <body class="bg-gray-900 text-gray-200">
     <!-- Header -->
-    <header class="bg-black/80 backdrop-blur-sm fixed top-0 left-0 right-0 z-50 transition-all duration-300">
-        <div class="container mx-auto px-6 py-3 flex justify-between items-center">
-            <a href="index.html" class="flex items-center space-x-3">
-                <img src="assets/img/logosite.png" alt="Logo JS Araújo Advogados" class="h-12 w-12 rounded-full">
-                <span class="text-xl font-semibold text-white">JS Araújo Advogados</span>
-            </a>
+    <header
+      class="bg-black/80 backdrop-blur-sm fixed top-0 left-0 right-0 z-50 transition-all duration-300"
+    >
+      <div
+        class="container mx-auto px-6 py-3 flex justify-between items-center"
+      >
+        <a href="index.html" class="flex items-center space-x-3">
+          <img
+            src="assets/img/logosite.png"
+            alt="Logo JS Araújo Advogados"
+            class="h-12 w-12 rounded-full"
+          />
+          <span class="text-xl font-semibold text-white"
+            >JS Araújo Advogados</span
+          >
+        </a>
 
-            <nav class="hidden md:flex items-center space-x-8">
-                <a href="index.html" class="text-gray-300 hover:text-amber-400 transition">Início</a>
-                <a href="index.html#sobre" class="text-gray-300 hover:text-amber-400 transition">Sobre Nós</a>
-                <a href="index.html#servicos" class="text-gray-300 hover:text-amber-400 transition">Áreas de atuação</a>
-                <a href="faleconosco.html"
-                    class="bg-amber-500 text-black px-5 py-2 rounded-md font-semibold hover:bg-amber-600 transition">Fale
-                    conosco</a>
-                <a href="cliente.html"
-                    class="bg-amber-500 text-black px-5 py-2 rounded-md font-semibold hover:bg-amber-600 transition">Área
-                    do Cliente</a>
-            </nav>
+        <nav class="hidden md:flex items-center space-x-8">
+          <a
+            href="index.html"
+            class="text-gray-300 hover:text-amber-400 transition"
+            >Início</a
+          >
+          <a
+            href="index.html#sobre"
+            class="text-gray-300 hover:text-amber-400 transition"
+            >Sobre Nós</a
+          >
+          <a
+            href="index.html#servicos"
+            class="text-gray-300 hover:text-amber-400 transition"
+            >Áreas de atuação</a
+          >
+          <a
+            href="faleconosco.html"
+            class="bg-amber-500 text-black px-5 py-2 rounded-md font-semibold hover:bg-amber-600 transition"
+            >Fale conosco</a
+          >
+          <a
+            href="cliente.html"
+            class="bg-amber-500 text-black px-5 py-2 rounded-md font-semibold hover:bg-amber-600 transition"
+            >Área do Cliente</a
+          >
+        </nav>
 
-            <button id="menu-btn" class="md:hidden text-white focus:outline-none">
-                <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24"
-                    stroke="currentColor">
-                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7" />
-                </svg>
-            </button>
-        </div>
+        <button id="menu-btn" class="md:hidden text-white focus:outline-none">
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            class="h-6 w-6"
+            fill="none"
+            viewBox="0 0 24 24"
+            stroke="currentColor"
+          >
+            <path
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              stroke-width="2"
+              d="M4 6h16M4 12h16m-7 6h7"
+            />
+          </svg>
+        </button>
+      </div>
 
-        <div id="mobile-menu" class="hidden md:hidden bg-black/90 flex flex-col w-full">
-            <a href="index.html" class="block py-3 px-6 text-white hover:bg-amber-500 hover:text-black">Início</a>
-            <a href="index.html#sobre" class="block py-3 px-6 text-white hover:bg-amber-500 hover:text-black">Sobre
-                Nós</a>
-            <a href="index.html#servicos" class="block py-3 px-6 text-white hover:bg-amber-500 hover:text-black">Áreas
-                de atuação</a>
-            <a href="faleconosco.html"
-                class="block py-3 px-6 bg-amber-500 text-black font-semibold hover:bg-amber-600 transition">Fale
-                conosco</a>
-            <a href="cliente.html"
-                class="block py-3 px-6 bg-amber-500 text-black font-semibold hover:bg-amber-600 transition">Área do
-                Cliente</a>
-        </div>
+      <div
+        id="mobile-menu"
+        class="hidden md:hidden bg-black/90 flex flex-col w-full"
+      >
+        <a
+          href="index.html"
+          class="block py-3 px-6 text-white hover:bg-amber-500 hover:text-black"
+          >Início</a
+        >
+        <a
+          href="index.html#sobre"
+          class="block py-3 px-6 text-white hover:bg-amber-500 hover:text-black"
+          >Sobre Nós</a
+        >
+        <a
+          href="index.html#servicos"
+          class="block py-3 px-6 text-white hover:bg-amber-500 hover:text-black"
+          >Áreas de atuação</a
+        >
+        <a
+          href="faleconosco.html"
+          class="block py-3 px-6 bg-amber-500 text-black font-semibold hover:bg-amber-600 transition"
+          >Fale conosco</a
+        >
+        <a
+          href="cliente.html"
+          class="block py-3 px-6 bg-amber-500 text-black font-semibold hover:bg-amber-600 transition"
+          >Área do Cliente</a
+        >
+      </div>
     </header>
 
     <!-- Seção Fale Conosco -->
     <main class="pt-28">
-        <section class="py-24 bg-gray-900 fade-in">
-            <div class="container mx-auto px-6 text-center">
-                <h1 class="text-5xl font-montserrat font-black text-amber-400 mb-4">Fale Conosco</h1>
-                <p class="text-gray-300 mb-12">Entre em contato conosco para esclarecer dúvidas ou solicitar atendimento
-                    jurídico.</p>
+      <section class="py-24 bg-gray-900 fade-in">
+        <div class="container mx-auto px-6 text-center">
+          <h1 class="text-5xl font-montserrat font-black text-amber-400 mb-4">
+            Fale Conosco
+          </h1>
+          <p class="text-gray-300 mb-12">
+            Entre em contato conosco para esclarecer dúvidas ou solicitar
+            atendimento jurídico.
+          </p>
 
-                <!-- Formulário com Formspree -->
-                <form action="https://formspree.io/f/xjkaelvz" method="POST"
-                    class="max-w-2xl mx-auto bg-gray-800 p-10 rounded-xl shadow-lg space-y-6">
-
-                    <div class="flex flex-col text-left">
-                        <label for="nome" class="mb-2 font-semibold">Nome</label>
-                        <input type="text" name="nome" id="nome" placeholder="Seu nome completo"
-                            class="p-3 rounded-md bg-gray-900 border border-gray-700 focus:outline-none focus:ring-2 focus:ring-amber-500"
-                            required>
-                    </div>
-
-                    <div class="flex flex-col text-left">
-                        <label for="telefone" class="mb-2 font-semibold">Celular</label>
-                        <input type="tel" name="telefone" id="telefone" placeholder="(21) 99999-9999"
-                            class="p-3 rounded-md bg-gray-900 border border-gray-700 focus:outline-none focus:ring-2 focus:ring-amber-500"
-                            required>
-                    </div>
-
-
-                    <div class="flex flex-col text-left">
-                        <label for="email" class="mb-2 font-semibold">Email</label>
-                        <input type="email" name="email" id="email" placeholder="seuemail@exemplo.com"
-                            class="p-3 rounded-md bg-gray-900 border border-gray-700 focus:outline-none focus:ring-2 focus:ring-amber-500"
-                            required>
-                    </div>
-
-                    <div class="flex flex-col text-left">
-                        <label for="assunto" class="mb-2 font-semibold">Assunto</label>
-                        <input type="text" name="assunto" id="assunto" placeholder="Assunto da mensagem"
-                            class="p-3 rounded-md bg-gray-900 border border-gray-700 focus:outline-none focus:ring-2 focus:ring-amber-500"
-                            required>
-                    </div>
-
-                    <div class="flex flex-col text-left">
-                        <label for="mensagem" class="mb-2 font-semibold">Mensagem</label>
-                        <textarea name="mensagem" id="mensagem" placeholder="Escreva sua mensagem aqui..." rows="6"
-                            class="p-3 rounded-md bg-gray-900 border border-gray-700 focus:outline-none focus:ring-2 focus:ring-amber-500"
-                            required></textarea>
-                    </div>
-
-                    <button type="submit"
-                        class="w-full bg-amber-500 text-black font-semibold py-3 rounded-md hover:bg-amber-600 transition">
-                        Enviar Mensagem
-                    </button>
-
-                    <!-- Mensagens de status -->
-                    <p class="mt-4 text-green-400 hidden" id="form-success">Mensagem enviada com sucesso!</p>
-                    <p class="mt-4 text-red-400 hidden" id="form-error">Ocorreu um erro ao enviar. Tente novamente.</p>
-                </form>
-
-                <script>
-                    const form = document.querySelector('form');
-                    const successMsg = document.getElementById('form-success');
-                    const errorMsg = document.getElementById('form-error');
-
-                    form.addEventListener('submit', async function (e) {
-                        e.preventDefault();
-                        const data = new FormData(form);
-                        try {
-                            const response = await fetch(form.action, {
-                                method: form.method,
-                                body: data,
-                                headers: { 'Accept': 'application/json' }
-                            });
-                            if (response.ok) {
-                                successMsg.classList.remove('hidden');
-                                errorMsg.classList.add('hidden');
-                                form.reset();
-                            } else {
-                                throw new Error('Erro ao enviar');
-                            }
-                        } catch (error) {
-                            successMsg.classList.add('hidden');
-                            errorMsg.classList.remove('hidden');
-                        }
-                    });
-                </script>
+          <!-- Formulário com Formspree -->
+          <form
+            action="https://formspree.io/f/xjkaelvz"
+            method="POST"
+            class="max-w-2xl mx-auto bg-gray-800 p-10 rounded-xl shadow-lg space-y-6"
+          >
+            <div class="flex flex-col text-left">
+              <label for="nome" class="mb-2 font-semibold">Nome</label>
+              <input
+                type="text"
+                name="nome"
+                id="nome"
+                placeholder="Seu nome completo"
+                class="p-3 rounded-md bg-gray-900 border border-gray-700 focus:outline-none focus:ring-2 focus:ring-amber-500"
+                required
+              />
             </div>
-        </section>
+
+            <div class="flex flex-col text-left">
+              <label for="telefone" class="mb-2 font-semibold">Celular</label>
+              <input
+                type="tel"
+                name="telefone"
+                id="telefone"
+                placeholder="(21) 99999-9999"
+                class="p-3 rounded-md bg-gray-900 border border-gray-700 focus:outline-none focus:ring-2 focus:ring-amber-500"
+                required
+              />
+            </div>
+
+            <div class="flex flex-col text-left">
+              <label for="email" class="mb-2 font-semibold">Email</label>
+              <input
+                type="email"
+                name="email"
+                id="email"
+                placeholder="seuemail@exemplo.com"
+                class="p-3 rounded-md bg-gray-900 border border-gray-700 focus:outline-none focus:ring-2 focus:ring-amber-500"
+                required
+              />
+            </div>
+
+            <div class="flex flex-col text-left">
+              <label for="assunto" class="mb-2 font-semibold">Assunto</label>
+              <input
+                type="text"
+                name="assunto"
+                id="assunto"
+                placeholder="Assunto da mensagem"
+                class="p-3 rounded-md bg-gray-900 border border-gray-700 focus:outline-none focus:ring-2 focus:ring-amber-500"
+                required
+              />
+            </div>
+
+            <div class="flex flex-col text-left">
+              <label for="mensagem" class="mb-2 font-semibold">Mensagem</label>
+              <textarea
+                name="mensagem"
+                id="mensagem"
+                placeholder="Escreva sua mensagem aqui..."
+                rows="6"
+                class="p-3 rounded-md bg-gray-900 border border-gray-700 focus:outline-none focus:ring-2 focus:ring-amber-500"
+                required
+              ></textarea>
+            </div>
+
+            <button
+              type="submit"
+              class="w-full bg-amber-500 text-black font-semibold py-3 rounded-md hover:bg-amber-600 transition"
+            >
+              Enviar Mensagem
+            </button>
+
+            <!-- Mensagens de status -->
+            <p class="mt-4 text-green-400 hidden" id="form-success">
+              Mensagem enviada com sucesso!
+            </p>
+            <p class="mt-4 text-red-400 hidden" id="form-error">
+              Ocorreu um erro ao enviar. Tente novamente.
+            </p>
+          </form>
+
+          <script>
+            const form = document.querySelector("form");
+            const successMsg = document.getElementById("form-success");
+            const errorMsg = document.getElementById("form-error");
+
+            form.addEventListener("submit", async function (e) {
+              e.preventDefault();
+              const data = new FormData(form);
+              try {
+                const response = await fetch(form.action, {
+                  method: form.method,
+                  body: data,
+                  headers: { Accept: "application/json" },
+                });
+                if (response.ok) {
+                  successMsg.classList.remove("hidden");
+                  errorMsg.classList.add("hidden");
+                  form.reset();
+                } else {
+                  throw new Error("Erro ao enviar");
+                }
+              } catch (error) {
+                successMsg.classList.add("hidden");
+                errorMsg.classList.remove("hidden");
+              }
+            });
+          </script>
+        </div>
+      </section>
     </main>
 
     <footer class="bg-black text-gray-300 py-10 border-t border-gray-800">
-        <div class="max-w-6xl mx-auto px-6 grid grid-cols-1 md:grid-cols-3 gap-10">
-
-            <div>
-                <h3 class="text-amber-400 text-lg font-semibold mb-4 flex items-center gap-2">
-                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
-                        stroke="currentColor" class="w-5 h-5 text-amber-400">
-                        <path stroke-linecap="round" stroke-linejoin="round"
-                            d="M12 21c4.97-4.97 8-8.03 8-11.5A8 8 0 004 9.5c0 3.47 3.03 6.53 8 11.5z" />
-                        <path stroke-linecap="round" stroke-linejoin="round"
-                            d="M12 11a2.5 2.5 0 100-5 2.5 2.5 0 000 5z" />
-                    </svg>
-                    Localização
-                </h3>
-                <p class="text-sm leading-relaxed">
-                    Rio de Janeiro/RJ <br><br>
-                    São Paulo/SP
-                </p>
-            </div>
-
-
-            <div>
-                <h3 class="text-amber-400 text-lg font-semibold mb-4 flex items-center gap-2">
-                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
-                        stroke="currentColor" class="w-5 h-5 text-amber-400">
-                        <path stroke-linecap="round" stroke-linejoin="round"
-                            d="M21.75 6.75v10.5a2.25 2.25 0 01-2.25 2.25H4.5A2.25 2.25 0 012.25 17.25V6.75M21.75 6.75l-9.75 6.75L2.25 6.75" />
-                    </svg>
-                    Contato
-                </h3>
-
-
-                <p class="flex items-center gap-2 text-sm">
-                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
-                        stroke="currentColor" class="w-4 h-4 text-amber-400">
-                        <path stroke-linecap="round" stroke-linejoin="round"
-                            d="M21.75 6.75v10.5a2.25 2.25 0 01-2.25 2.25H4.5A2.25 2.25 0 012.25 17.25V6.75M21.75 6.75l-9.75 6.75L2.25 6.75" />
-                    </svg>
-                    <a href="mailto:jsaraujoadvogados@gmail.com" class="hover:underline">jsaraujoadvogados@gmail.com</a>
-                </p>
-
-
-                <p class="flex items-center gap-2 text-sm mt-2">
-                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
-                        stroke="currentColor" class="w-4 h-4 text-amber-400">
-                        <path stroke-linecap="round" stroke-linejoin="round"
-                            d="M2.25 4.5c0-1.243 1.007-2.25 2.25-2.25h2.25a1.5 1.5 0 011.5 1.5v3a1.5 1.5 0 01-1.5 1.5H5.25v2.25c1.944 3.345 4.905 6.306 8.25 8.25h2.25v-1.5a1.5 1.5 0 011.5-1.5h3a1.5 1.5 0 011.5 1.5v2.25a2.25 2.25 0 01-2.25 2.25h-2.25C9.03 22.5 1.5 14.97 1.5 6.75V4.5z" />
-                    </svg>
-                    <strong>Para urgências:</strong>
-                    <a href="https://wa.me/5521997875278" target="_blank" class="text-amber-400 hover:underline">(21)
-                        99787-5278</a>
-                </p>
-
-                <p class="flex items-center gap-2 text-sm mt-2">
-                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
-                        stroke="currentColor" class="w-4 h-4 text-amber-400">
-                        <path stroke-linecap="round" stroke-linejoin="round"
-                            d="M2.25 4.5c0-1.243 1.007-2.25 2.25-2.25h2.25a1.5 1.5 0 011.5 1.5v3a1.5 1.5 0 01-1.5 1.5H5.25v2.25c1.944 3.345 4.905 6.306 8.25 8.25h2.25v-1.5a1.5 1.5 0 011.5-1.5h3a1.5 1.5 0 011.5 1.5v2.25a2.25 2.25 0 01-2.25 2.25h-2.25C9.03 22.5 1.5 14.97 1.5 6.75V4.5z" />
-                    </svg>
-                    <a href="https://wa.me/5521975839235" target="_blank" class="text-amber-400 hover:underline">(21)
-                        97583-9235</a>
-                </p>
-
-            </div>
-
-
-            <div class="text-center md:text-right">
-                <h3
-                    class="text-amber-400 text-lg font-semibold mb-4 flex items-center justify-center md:justify-end gap-2">
-                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
-                        stroke="currentColor" class="w-5 h-5 text-amber-400">
-                        <path stroke-linecap="round" stroke-linejoin="round"
-                            d="M18.364 5.636a9 9 0 11-12.728 12.728A9 9 0 0118.364 5.636z" />
-                        <path stroke-linecap="round" stroke-linejoin="round"
-                            d="M15 11.25a3.75 3.75 0 11-7.5 0 3.75 3.75 0 017.5 0z" />
-                    </svg>
-                    Redes Sociais
-                </h3>
-                <div class="flex justify-center md:justify-end gap-4">
-                    <a href="https://www.instagram.com/jsaraujoadvogados?igsh=MWt5OWJqNGw1dThrcA==" target="_blank"
-                        class="hover:text-amber-400 transition">
-                        <i class="fab fa-instagram text-xl"></i>
-                    </a>
-                </div>
-
-                <div class="mt-6 text-sm text-gray-400">
-                    <p class="mb-2">Este site foi desenvolvido por</p>
-                    <a href="https://linktr.ee/bourbakisolucoesdigitais" target="_blank"
-                        class="flex items-center justify-center md:justify-end gap-2 hover:opacity-80 transition">
-                        <img src="assets/img/logo-bourbaki.png" alt="Bourbaki Soluções" class="h-7" />
-                        <span class="text-amber-400 font-semibold">Bourbaki Soluções Digitais</span>
-                    </a>
-                </div>
-            </div>
-
+      <div
+        class="max-w-6xl mx-auto px-6 grid grid-cols-1 md:grid-cols-3 gap-10"
+      >
+        <div>
+          <h3
+            class="text-amber-400 text-lg font-semibold mb-4 flex items-center gap-2"
+          >
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              fill="none"
+              viewBox="0 0 24 24"
+              stroke-width="1.5"
+              stroke="currentColor"
+              class="w-5 h-5 text-amber-400"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                d="M12 21c4.97-4.97 8-8.03 8-11.5A8 8 0 004 9.5c0 3.47 3.03 6.53 8 11.5z"
+              />
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                d="M12 11a2.5 2.5 0 100-5 2.5 2.5 0 000 5z"
+              />
+            </svg>
+            Localização
+          </h3>
+          <p class="text-sm leading-relaxed">
+            Rio de Janeiro/RJ <br /><br />
+            São Paulo/SP
+          </p>
         </div>
 
+        <div>
+          <h3
+            class="text-amber-400 text-lg font-semibold mb-4 flex items-center gap-2"
+          >
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              fill="none"
+              viewBox="0 0 24 24"
+              stroke-width="1.5"
+              stroke="currentColor"
+              class="w-5 h-5 text-amber-400"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                d="M21.75 6.75v10.5a2.25 2.25 0 01-2.25 2.25H4.5A2.25 2.25 0 012.25 17.25V6.75M21.75 6.75l-9.75 6.75L2.25 6.75"
+              />
+            </svg>
+            Contato
+          </h3>
 
-        <div class="mt-10 border-t border-gray-800 pt-4 text-center text-sm text-gray-400">
-            <strong>José Sérgio S. de Araújo - OAB/RJ:258-786</strong> <br><br>
-            CNPJ: 63.501.989/0001-37 <br><br>
-            © 2025 JS Araújo Advogados. Todos os direitos reservados.<br />
-            Seus dados serão utilizados exclusivamente para o atendimento jurídico solicitado, em conformidade com a
-            LGPD.
+          <p class="flex items-center gap-2 text-sm">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              fill="none"
+              viewBox="0 0 24 24"
+              stroke-width="1.5"
+              stroke="currentColor"
+              class="w-4 h-4 text-amber-400"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                d="M21.75 6.75v10.5a2.25 2.25 0 01-2.25 2.25H4.5A2.25 2.25 0 012.25 17.25V6.75M21.75 6.75l-9.75 6.75L2.25 6.75"
+              />
+            </svg>
+            <a href="mailto:jsaraujoadvogados@gmail.com" class="hover:underline"
+              >jsaraujoadvogados@gmail.com</a
+            >
+          </p>
+
+          <p class="flex items-center gap-2 text-sm mt-2">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              fill="none"
+              viewBox="0 0 24 24"
+              stroke-width="1.5"
+              stroke="currentColor"
+              class="w-4 h-4 text-amber-400"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                d="M2.25 4.5c0-1.243 1.007-2.25 2.25-2.25h2.25a1.5 1.5 0 011.5 1.5v3a1.5 1.5 0 01-1.5 1.5H5.25v2.25c1.944 3.345 4.905 6.306 8.25 8.25h2.25v-1.5a1.5 1.5 0 011.5-1.5h3a1.5 1.5 0 011.5 1.5v2.25a2.25 2.25 0 01-2.25 2.25h-2.25C9.03 22.5 1.5 14.97 1.5 6.75V4.5z"
+              />
+            </svg>
+            <strong>Para urgências:</strong>
+            <a
+              href="https://wa.me/5521997875278"
+              target="_blank"
+              class="text-amber-400 hover:underline"
+              >(21) 99787-5278</a
+            >
+          </p>
+
+          <p class="flex items-center gap-2 text-sm mt-2">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              fill="none"
+              viewBox="0 0 24 24"
+              stroke-width="1.5"
+              stroke="currentColor"
+              class="w-4 h-4 text-amber-400"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                d="M2.25 4.5c0-1.243 1.007-2.25 2.25-2.25h2.25a1.5 1.5 0 011.5 1.5v3a1.5 1.5 0 01-1.5 1.5H5.25v2.25c1.944 3.345 4.905 6.306 8.25 8.25h2.25v-1.5a1.5 1.5 0 011.5-1.5h3a1.5 1.5 0 011.5 1.5v2.25a2.25 2.25 0 01-2.25 2.25h-2.25C9.03 22.5 1.5 14.97 1.5 6.75V4.5z"
+              />
+            </svg>
+            <a
+              href="https://wa.me/5521975839235"
+              target="_blank"
+              class="text-amber-400 hover:underline"
+              >(21) 97583-9235</a
+            >
+          </p>
         </div>
+
+        <div class="text-center md:text-right">
+          <h3
+            class="text-amber-400 text-lg font-semibold mb-4 flex items-center justify-center md:justify-end gap-2"
+          >
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              fill="none"
+              viewBox="0 0 24 24"
+              stroke-width="1.5"
+              stroke="currentColor"
+              class="w-5 h-5 text-amber-400"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                d="M18.364 5.636a9 9 0 11-12.728 12.728A9 9 0 0118.364 5.636z"
+              />
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                d="M15 11.25a3.75 3.75 0 11-7.5 0 3.75 3.75 0 017.5 0z"
+              />
+            </svg>
+            Redes Sociais
+          </h3>
+          <div class="flex justify-center md:justify-end gap-4">
+            <a
+              href="https://www.instagram.com/jsaraujoadvogados?igsh=MWt5OWJqNGw1dThrcA=="
+              target="_blank"
+              class="hover:text-amber-400 transition"
+            >
+              <i class="fab fa-instagram text-xl"></i>
+            </a>
+          </div>
+
+          <div class="mt-6 text-sm text-gray-400">
+            <p class="mb-2">Este site foi desenvolvido por</p>
+            <a
+              href="https://linktr.ee/bourbakisolucoesdigitais"
+              target="_blank"
+              class="flex items-center justify-center md:justify-end gap-2 hover:opacity-80 transition"
+            >
+              <img
+                src="assets/img/logo-bourbaki.png"
+                alt="Bourbaki Soluções"
+                class="h-7"
+              />
+              <span class="text-amber-400 font-semibold"
+                >Bourbaki Soluções Digitais</span
+              >
+            </a>
+          </div>
+        </div>
+      </div>
+
+      <div
+        class="mt-10 border-t border-gray-800 pt-4 text-center text-sm text-gray-400"
+      >
+        <strong>José Sérgio S. de Araújo - OAB/RJ:258-786</strong> <br /><br />
+        CNPJ: 63.501.989/0001-37 <br /><br />
+        © 2026 JS Araújo Advogados. Todos os direitos reservados.<br />
+        Seus dados serão utilizados exclusivamente para o atendimento jurídico
+        solicitado, em conformidade com a LGPD.
+      </div>
     </footer>
 
     <!-- Botão WhatsApp -->
-    <a href="https://wa.me/message/V5TDIDNL4IDZL1" target="_blank"
-        class="fixed bottom-6 right-6 bg-green-500 text-white p-4 rounded-full shadow-lg hover:bg-green-600 transition-transform transform hover:scale-110 z-50">
-        <i class="fab fa-whatsapp text-2xl"></i>
+    <a
+      href="https://wa.me/message/V5TDIDNL4IDZL1"
+      target="_blank"
+      class="fixed bottom-6 right-6 bg-green-500 text-white p-4 rounded-full shadow-lg hover:bg-green-600 transition-transform transform hover:scale-110 z-50"
+    >
+      <i class="fab fa-whatsapp text-2xl"></i>
     </a>
 
     <script src="script.js"></script>
-</body>
-
+  </body>
 </html>
