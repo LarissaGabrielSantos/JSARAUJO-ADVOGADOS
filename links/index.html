@@ -1,50 +1,929 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="pt-br">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Gerenciamento de Sistemas Jurídicos</title>
-    <link rel="icon" type="image/png" href="../assets/img/logo js advogados.png js advogados.png">
-    <link rel="stylesheet" href="../links/styles.css" />
-  </head>
-  <body>
-    <header>
-      <div class="logo-container">
-        <img src="../assets/img/logo js advogados.png" style="width: 9%" />
-      </div>
-      <h1>Gerenciamento de Sistemas Jurídicos</h1>
-    </header>
 
-    <main class="container">
-      <a href="#" class="btn-square" target="_blank" rel="noopener noreferrer">dcp</a> <!--Não encontrado-->
+    <title>Gerenciamento de Sistemas Jurídicos</title>
+
+    <link
+      rel="icon"
+      type="image/png"
+      href="../assets/img/logo js advogados.png js advogados.png"
+    />
+
+    <link rel="stylesheet" href="../links/styles.css" />
+
+    <style>
+     
+
+      #loginScreen {
+        position: fixed;
+        inset: 0;
+        background: #f4f6f8;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        z-index: 99999;
+      }
+
+      .login-box {
+        width: 100%;
+        max-width: 420px;
+        background: #ffffff;
+        padding: 40px;
+        border-radius: 18px;
+        box-shadow: 0 15px 50px rgba(0, 0, 0, 0.12);
+        text-align: center;
+      }
+
+      .login-logo {
+        width: 130px;
+        max-width: 70%;
+        margin-bottom: 20px;
+      }
+
+      .login-box h2 {
+        margin: 0 0 8px;
+        color: #222;
+      }
+
+      .login-box p {
+        color: #777;
+        margin-bottom: 28px;
+      }
+
+      .login-input {
+        width: 100%;
+        box-sizing: border-box;
+        padding: 14px 15px;
+        margin-bottom: 12px;
+        border: 1px solid #ddd;
+        border-radius: 10px;
+        font-size: 15px;
+        outline: none;
+      }
+
+      .login-input:focus {
+        border-color: #333;
+      }
+
+      .login-button {
+        width: 100%;
+        border: none;
+        padding: 14px;
+        border-radius: 10px;
+        background: #222;
+        color: white;
+        font-size: 15px;
+        cursor: pointer;
+        transition: 0.2s;
+      }
+
+      .login-button:hover {
+        background: #000;
+      }
+
+      #loginError {
+        color: #c62828;
+        font-size: 14px;
+        margin-top: 15px;
+        display: none;
+      }
+
+    
+
+      #app {
+        display: none;
+      }
+
+      .user-bar {
+        max-width: 1200px;
+        margin: 15px auto 0;
+        padding: 0 20px;
+        display: flex;
+        justify-content: flex-end;
+        align-items: center;
+        gap: 12px;
+        box-sizing: border-box;
+      }
+
+      .user-email {
+        font-size: 13px;
+        color: #666;
+      }
+
+      .logout-button {
+        border: 1px solid #ddd;
+        background: white;
+        padding: 8px 14px;
+        border-radius: 8px;
+        cursor: pointer;
+        font-size: 13px;
+      }
+
+      .logout-button:hover {
+        background: #f5f5f5;
+      }
+
+     
+
+      .agenda-wrapper {
+        max-width: 1200px;
+        margin: 30px auto;
+        padding: 0 20px;
+        box-sizing: border-box;
+      }
+
+      .agenda-header {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        gap: 15px;
+        margin-bottom: 20px;
+        flex-wrap: wrap;
+      }
+
+      .agenda-title h2 {
+        margin: 0;
+        font-size: 24px;
+        color: #222;
+      }
+
+      .agenda-title p {
+        margin: 5px 0 0;
+        color: #777;
+        font-size: 14px;
+      }
+
+      .new-hearing-button {
+        border: none;
+        background: #222;
+        color: white;
+        padding: 12px 18px;
+        border-radius: 9px;
+        cursor: pointer;
+        font-size: 14px;
+      }
+
+      .new-hearing-button:hover {
+        background: #000;
+      }
+
+      .board {
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        gap: 15px;
+        align-items: start;
+      }
+
+      .column {
+        background: #f1f3f5;
+        border-radius: 14px;
+        padding: 14px;
+        min-height: 180px;
+      }
+
+      .column-header {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin-bottom: 14px;
+      }
+
+      .column-header h3 {
+        margin: 0;
+        font-size: 15px;
+        color: #333;
+      }
+
+      .counter {
+        background: #ddd;
+        border-radius: 20px;
+        padding: 3px 8px;
+        font-size: 12px;
+        color: #555;
+      }
+
+      .cards {
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+      }
+
+      .hearing-card {
+        background: white;
+        border-radius: 10px;
+        padding: 14px;
+        box-shadow: 0 2px 7px rgba(0, 0, 0, 0.06);
+        border: 1px solid #eee;
+      }
+
+      .hearing-card h4 {
+        margin: 0 0 8px;
+        font-size: 15px;
+        color: #222;
+      }
+
+      .card-line {
+        font-size: 13px;
+        color: #666;
+        margin: 5px 0;
+        line-height: 1.4;
+      }
+
+      .card-line strong {
+        color: #333;
+      }
+
+      .card-actions {
+        display: flex;
+        gap: 7px;
+        margin-top: 12px;
+      }
+
+      .card-actions button {
+        flex: 1;
+        border: 1px solid #ddd;
+        background: white;
+        padding: 7px;
+        border-radius: 7px;
+        cursor: pointer;
+        font-size: 12px;
+      }
+
+      .card-actions button:hover {
+        background: #f4f4f4;
+      }
+
+      .delete-button {
+        color: #b71c1c;
+      }
+
+      .empty-column {
+        color: #999;
+        font-size: 13px;
+        text-align: center;
+        padding: 20px 5px;
+      }
+
+    
+
+      .modal-overlay {
+        position: fixed;
+        inset: 0;
+        background: rgba(0, 0, 0, 0.5);
+        display: none;
+        align-items: center;
+        justify-content: center;
+        padding: 20px;
+        z-index: 10000;
+        box-sizing: border-box;
+      }
+
+      .modal {
+        width: 100%;
+        max-width: 600px;
+        background: white;
+        border-radius: 16px;
+        padding: 25px;
+        max-height: 90vh;
+        overflow-y: auto;
+        box-sizing: border-box;
+      }
+
+      .modal-header {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin-bottom: 20px;
+      }
+
+      .modal-header h2 {
+        margin: 0;
+        font-size: 21px;
+      }
+
+      .close-modal {
+        border: none;
+        background: transparent;
+        font-size: 25px;
+        cursor: pointer;
+        color: #777;
+      }
+
+      .form-group {
+        margin-bottom: 14px;
+      }
+
+      .form-group label {
+        display: block;
+        margin-bottom: 6px;
+        font-size: 13px;
+        font-weight: 600;
+        color: #444;
+      }
+
+      .form-group input,
+      .form-group select,
+      .form-group textarea {
+        width: 100%;
+        box-sizing: border-box;
+        border: 1px solid #ddd;
+        border-radius: 9px;
+        padding: 11px;
+        font-family: inherit;
+        font-size: 14px;
+        outline: none;
+      }
+
+      .form-group textarea {
+        resize: vertical;
+        min-height: 90px;
+      }
+
+      .form-row {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 12px;
+      }
+
+      .save-button {
+        width: 100%;
+        border: none;
+        background: #222;
+        color: white;
+        padding: 13px;
+        border-radius: 9px;
+        cursor: pointer;
+        margin-top: 5px;
+        font-size: 14px;
+      }
+
+      .save-button:hover {
+        background: #000;
+      }
+
+    
+
+      @media (max-width: 900px) {
+        .board {
+          grid-template-columns: repeat(2, 1fr);
+        }
+      }
+
+      @media (max-width: 600px) {
+        .login-box {
+          margin: 20px;
+          padding: 30px 22px;
+        }
+
+        .board {
+          grid-template-columns: 1fr;
+        }
+
+        .form-row {
+          grid-template-columns: 1fr;
+        }
+
+        .agenda-header {
+          align-items: stretch;
+        }
+
+        .new-hearing-button {
+          width: 100%;
+        }
+
+        .user-bar {
+          flex-direction: column;
+          align-items: flex-end;
+        }
+      }
+
+     
+
+      .card-top {
+        display: flex;
+        align-items: flex-start;
+        justify-content: space-between;
+        gap: 10px;
+        margin-bottom: 8px;
+      }
+
+      .card-top h4 {
+        margin: 0;
+        min-width: 0;
+      }
+
+      .type-badge {
+        flex: 0 0 auto;
+        border: 1px solid #e2e2e2;
+        background: #f8f8f8;
+        border-radius: 999px;
+        padding: 4px 8px;
+        font-size: 10px;
+        color: #555;
+        white-space: nowrap;
+      }
+
+      .hearing-near {
+        border-color: #d4af37;
+        box-shadow: 0 0 0 1px rgba(212,175,55,.18), 0 4px 14px rgba(0,0,0,.08);
+      }
+
+      .hearing-card {
+        overflow-wrap: anywhere;
+      }
+
+      .hearing-card .card-actions button {
+        min-height: 34px;
+      }
+
+      .modal input:focus,
+      .modal select:focus,
+      .modal textarea:focus {
+        border-color: #d4af37;
+        box-shadow: 0 0 0 3px rgba(212,175,55,.12);
+      }
+
+      .login-button:disabled {
+        opacity: .65;
+        cursor: wait;
+      }
+
+      @media (max-width: 1100px) {
+        .agenda-wrapper {
+          max-width: 100%;
+        }
+
+        .board {
+          grid-template-columns: repeat(2, minmax(0, 1fr));
+        }
+      }
+
+      @media (max-width: 700px) {
+        body {
+          padding: 25px 12px;
+        }
+
+        header {
+          margin-bottom: 30px;
+        }
+
+        header .logo-container img {
+          width: 28% !important;
+          min-width: 90px;
+        }
+
+        .user-bar {
+          padding: 0 5px;
+          margin-top: 5px;
+          width: 100%;
+        }
+
+        .agenda-wrapper {
+          padding: 0 5px;
+          margin: 22px auto;
+        }
+
+        .board {
+          grid-template-columns: 1fr;
+        }
+
+        .column {
+          min-height: 120px;
+        }
+
+        .container {
+          width: 100%;
+        }
+
+        .login-box {
+          padding: 30px 22px;
+        }
+
+        .modal {
+          padding: 20px 16px;
+          max-height: 92vh;
+        }
+      }
+
+      @media (max-width: 420px) {
+        .agenda-title h2 {
+          font-size: 20px;
+        }
+
+        .card-top {
+          flex-direction: column;
+        }
+
+        .type-badge {
+          align-self: flex-start;
+        }
+
+        .user-bar {
+          align-items: stretch;
+        }
+
+        .logout-button {
+          width: 100%;
+        }
+      }
+
+    </style>
+  </head>
+
+  <body>
+    
+
+    <div id="loginScreen">
+      <div class="login-box">
+        <img
+          src="../assets/img/logo js advogados.png"
+          class="login-logo"
+          alt="JS Advogados"
+        />
+
+        <form id="loginForm">
+          <input
+            type="email"
+            id="email"
+            class="login-input"
+            placeholder="E-mail"
+            required
+          />
+
+          <input
+            type="password"
+            id="password"
+            class="login-input"
+            placeholder="Senha"
+            required
+          />
+
+          <button type="submit" class="login-button">Entrar</button>
+        </form>
+
+        <div id="loginError"></div>
+      </div>
+    </div>
+
+   
+
+    <div id="app">
+      <div class="user-bar">
+        <span class="user-email" id="userEmail"></span>
+
+        <button class="logout-button" id="logoutButton">Sair</button>
+      </div>
+
+      <header>
+        <div class="logo-container">
+          <img src="../assets/img/logo js advogados.png" style="width: 9%" />
+        </div>
+
+        <h1>Gerenciamento de Sistemas Jurídicos</h1>
+      </header>
+
+     
+
+      <section class="agenda-wrapper">
+        <div class="agenda-header">
+          <div class="agenda-title">
+            <h2>Agenda Jurídica</h2>
+
+            <p>Controle de audiências, processos e compromissos</p>
+          </div>
+
+          <button class="new-hearing-button" id="newHearingButton">
+            + Nova audiência
+          </button>
+        </div>
+
+        <div class="board">
+         
+
+          <div class="column">
+            <div class="column-header">
+              <h3>A fazer</h3>
+
+              <span class="counter" id="counter-a-fazer"> 0 </span>
+            </div>
+
+            <div class="cards" id="cards-a-fazer"></div>
+          </div>
+
+          
+
+          <div class="column">
+            <div class="column-header">
+              <h3>Agendadas</h3>
+
+              <span class="counter" id="counter-agendada"> 0 </span>
+            </div>
+
+            <div class="cards" id="cards-agendada"></div>
+          </div>
+
+         
+
+          <div class="column">
+            <div class="column-header">
+              <h3>Realizadas</h3>
+
+              <span class="counter" id="counter-realizada"> 0 </span>
+            </div>
+
+            <div class="cards" id="cards-realizada"></div>
+          </div>
+
+          
+
+          <div class="column">
+            <div class="column-header">
+              <h3>Canceladas</h3>
+
+              <span class="counter" id="counter-cancelada"> 0 </span>
+            </div>
+
+            <div class="cards" id="cards-cancelada"></div>
+          </div>
+        </div>
+      </section>
+
       
-      <a href="https://eproc1g.tjrj.jus.br/eproc/" class="btn-square" target="_blank" rel="noopener noreferrer">eproc tjrj (1º Grau)</a>
-      <a href="https://eproc2g.tjrj.jus.br/eproc/" class="btn-square" target="_blank" rel="noopener noreferrer">eproc tjrj (2º Grau)</a>
-      <a href="#" class="btn-square" target="_blank" rel="noopener noreferrer">eproc trf rj</a> <!--Não encontrado-->
-      
-      <a href="https://esaj.tjsp.jus.br/sajcas/login?service=https%3A%2F%2Fesaj.tjsp.jus.br%2Fesaj%2Fapi%2Fauth%2Fcheck" class="btn-square" target="_blank" rel="noopener noreferrer">esaj</a> 
-      
-      <a href="https://sso.cloud.pje.jus.br/auth/realms/pje/protocol/openid-connect/auth?response_type=code&client_id=pje-tjba-1g&redirect_uri=https%3A%2F%2Fpje.tjba.jus.br%2Fpje%2Flogin.seam&state=3ae0b3ab-69a9-4e21-a2a1-d0f9effb128b&login=true&scope=openid" class="btn-square" target="_blank" rel="noopener noreferrer">pje ba (1° Grau)</a>
-      <a href="https://sso.cloud.pje.jus.br/auth/realms/pje/protocol/openid-connect/auth?response_type=code&client_id=pje-tjba-2g&redirect_uri=https%3A%2F%2Fpje2g.tjba.jus.br%2Fpje%2Flogin.seam&state=91ebb03e-6f0e-4bb4-8a8c-384c0017738c&login=true&scope=openid" class="btn-square" target="_blank" rel="noopener noreferrer">pje ba (2° Grau)</a>
-      <a href="https://sso.cloud.pje.jus.br/auth/realms/pje/protocol/openid-connect/auth?response_type=code&client_id=pje-tjpe-1g-cloud&redirect_uri=https%3A%2F%2Fpje.cloud.tjpe.jus.br%2F1g%2Flogin.seam&state=1e69503f-c251-409f-a42c-2ba0ed144580&login=true&scope=openid" class="btn-square" target="_blank" rel="noopener noreferrer">pje pe (1° Grau)</a>
-      <a href="https://sso.cloud.pje.jus.br/auth/realms/pje/protocol/openid-connect/auth?response_type=code&client_id=pje-tjpe-2g-cloud&redirect_uri=https%3A%2F%2Fpje.cloud.tjpe.jus.br%2F2g%2Flogin.seam&state=bb644983-0eb5-4826-81be-d5bd21f78a79&login=true&scope=openid" class="btn-square" target="_blank" rel="noopener noreferrer">pje pe (2° Grau)</a>
-      <a href="https://tjrj.pje.jus.br/1g/loginOld.seam;jsessionid=h4PWd1r9uXI7kS0gp0TSbDh2H0KrSn76733hCRf8.pje-legacy-5c6fb5d974-2dz4c?loginComCertificado=false&cid=121880" class="btn-square" target="_blank" rel="noopener noreferrer">Pje rj</a>
-      
-      <a href="https://seeu.pje.jus.br/seeu/" class="btn-square" target="_blank" rel="noopener noreferrer">seeu</a>
-      
-      <a href="https://pje.trt6.jus.br/primeirograu/login.seam" class="btn-square" target="_blank" rel="noopener noreferrer">trt 6 (1° Grau)</a>
-      <a href="https://pje.trt6.jus.br/segundograu/login.seam" class="btn-square" target="_blank" rel="noopener noreferrer">trt 6 (2° Grau)</a>
-      <a href="https://pje.trt8.jus.br/primeirograu/login.seam" class="btn-square" target="_blank" rel="noopener noreferrer">trt 8 (1° Grau)</a>
-      <a href="https://pje.trt8.jus.br/segundograu/login.seam" class="btn-square" target="_blank" rel="noopener noreferrer">trt 8 (2° Grau)</a>
-      <a href="https://pje.trt12.jus.br/primeirograu/login.seam" class="btn-square" target="_blank" rel="noopener noreferrer">trt 12 (1° Grau)</a>
-      <a href="https://pje.trt12.jus.br/segundograu/login.seam" class="btn-square" target="_blank" rel="noopener noreferrer">trt 12 (2° Grau)</a>
-      <a href="https://pje.trt15.jus.br/primeirograu/login.seam" class="btn-square" target="_blank" rel="noopener noreferrer">trt 15 (1° Grau)</a>
-      <a href="https://pje.trt15.jus.br/segundograu/login.seam" class="btn-square" target="_blank" rel="noopener noreferrer">trt 15 (2° Grau)</a>
-    </main>
-    <footer>
-      <br>
-      <br>
-      <p>Página de apoio interno — contém apenas atalhos para sistemas públicos.</p>
-    </footer>
-  </body>
+
+      <div class="modal-overlay" id="modalOverlay">
+        <div class="modal">
+          <div class="modal-header">
+            <h2 id="modalTitle">Nova audiência</h2>
+
+            <button class="close-modal" id="closeModal">×</button>
+          </div>
+
+          <form id="hearingForm">
+            <input type="hidden" id="hearingId" />
+
+            <div class="form-group">
+              <label> Processo </label>
+
+              <input
+                type="text"
+                id="processo"
+                placeholder="Ex.: 0001234-56.2026.8.19.0001"
+                required
+              />
+            </div>
+
+            <div class="form-group">
+              <label> Parte </label>
+
+              <input
+                type="text"
+                id="parte"
+                placeholder="Nome da parte"
+                required
+              />
+            </div>
+
+            <div class="form-row">
+              <div class="form-group">
+                <label> Tipo de audiência </label>
+
+                <select id="tipo">
+                  <option value="Conciliação">Conciliação</option>
+
+                  <option value="Instrução">Instrução</option>
+
+                  <option value="Una">Una</option>
+
+                  <option value="Custódia">Custódia</option>
+
+                  <option value="Justificação">Justificação</option>
+
+                  <option value="Outra">Outra</option>
+                </select>
+              </div>
+
+              <div class="form-group">
+                <label> Status </label>
+
+                <select id="status">
+                  <option value="a-fazer">A fazer</option>
+
+                  <option value="agendada">Agendada</option>
+
+                  <option value="realizada">Realizada</option>
+
+                  <option value="cancelada">Cancelada</option>
+                </select>
+              </div>
+            </div>
+
+            <div class="form-row">
+              <div class="form-group">
+                <label> Data </label>
+
+                <input type="date" id="data" required />
+              </div>
+
+              <div class="form-group">
+                <label> Horário </label>
+
+                <input type="time" id="horario" required />
+              </div>
+            </div>
+
+            <div class="form-group">
+              <label> Advogado responsável </label>
+
+              <input type="text" id="advogado" placeholder="Nome do advogado" />
+            </div>
+
+            <div class="form-group">
+              <label> Observações </label>
+
+              <textarea
+                id="observacoes"
+                placeholder="Informações importantes sobre a audiência..."
+              ></textarea>
+            </div>
+
+            <button type="submit" class="save-button">Salvar audiência</button>
+          </form>
+        </div>
+      </div>
+
+     
+
+      <main class="container">
+        <a
+          href="https://www3.tjrj.jus.br/idserverjus-front/#/login?indGet=true&sgSist=PORTALSERVICOS"
+          class="btn-square"
+          target="_blank"
+          rel="noopener noreferrer"
+          >dcp</a
+        >
+
+        <a
+          href="https://eproc1g.tjrj.jus.br/eproc/"
+          class="btn-square"
+          target="_blank"
+          rel="noopener noreferrer"
+          >eproc tjrj (1º Grau)</a
+        >
+
+        <a
+          href="https://eproc2g.tjrj.jus.br/eproc/"
+          class="btn-square"
+          target="_blank"
+          rel="noopener noreferrer"
+          >eproc tjrj (2º Grau)</a
+        >
+
+        <a
+          href="https://www.tjrj.jus.br/eproc"
+          class="btn-square"
+          target="_blank"
+          rel="noopener noreferrer"
+          >eproc trf rj</a
+        >
+
+        <a
+          href="https://esaj.tjsp.jus.br/sajcas/login?service=https%3A%2F%2Fesaj.tjsp.jus.br%2Fesaj%2Fapi%2Fauth%2Fcheck"
+          class="btn-square"
+          target="_blank"
+          rel="noopener noreferrer"
+          >esaj</a
+        >
+
+        <a
+          href="https://sso.cloud.pje.jus.br/auth/realms/pje/protocol/openid-connect/auth?response_type=code&client_id=pje-tjba-1g&redirect_uri=https%3A%2F%2Fpje.tjba.jus.br%2Fpje%2Flogin.seam&state=3ae0b3ab-69a9-4e21-a2a1-d0f9effb128b&login=true&scope=openid"
+          class="btn-square"
+          target="_blank"
+          rel="noopener noreferrer"
+          >pje ba (1° Grau)</a
+        >
+
+        <a
+          href="https://sso.cloud.pje.jus.br/auth/realms/pje/protocol/openid-connect/auth?response_type=code&client_id=pje-tjba-2g&redirect_uri=https%3A%2F%2Fpje2g.tjba.jus.br%2Fpje%2Flogin.seam&state=91ebb03e-6f0e-4bb4-8a8c-384c0017738c&login=true&scope=openid"
+          class="btn-square"
+          target="_blank"
+          rel="noopener noreferrer"
+          >pje ba (2° Grau)</a
+        >
+
+        <a
+          href="https://sso.cloud.pje.jus.br/auth/realms/pje/protocol/openid-connect/auth?response_type=code&client_id=pje-tjpe-1g-cloud&redirect_uri=https%3A%2F%2Fpje.cloud.tjpe.jus.br%2F1g%2Flogin.seam&state=1e69503f-c251-409f-a42c-2ba0ed144580&login=true&scope=openid"
+          class="btn-square"
+          target="_blank"
+          rel="noopener noreferrer"
+          >pje pe (1° Grau)</a
+        >
+
+        <a
+          href="https://sso.cloud.pje.jus.br/auth/realms/pje/protocol/openid-connect/auth?response_type=code&client_id=pje-tjpe-2g-cloud&redirect_uri=https%3A%2F%2Fpje.cloud.tjpe.jus.br%2F2g%2Flogin.seam&state=bb644983-0eb5-4826-81be-d5bd21f78a79&login=true&scope=openid"
+          class="btn-square"
+          target="_blank"
+          rel="noopener noreferrer"
+          >pje pe (2° Grau)</a
+        >
+
+        <a
+          href="https://tjrj.pje.jus.br/1g/loginOld.seam;jsessionid=h4PWd1r9uXI7kS0gp0TSbDh2H0KrSn76733hCRf8.pje-legacy-5c6fb5d974-2dz4c?loginComCertificado=false&cid=121880"
+          class="btn-square"
+          target="_blank"
+          rel="noopener noreferrer"
+          >Pje rj</a
+        >
+
+        <a
+          href="https://seeu.pje.jus.br/seeu/"
+          class="btn-square"
+          target="_blank"
+          rel="noopener noreferrer"
+          >seeu</a
+        >
+
+        <a
+          href="https://pje.trt6.jus.br/primeirograu/login.seam"
+          class="btn-square"
+          target="_blank"
+          rel="noopener noreferrer"
+          >trt 6 (1° Grau)</a
+        >
+
+        <a
+          href="https://pje.trt6.jus.br/segundograu/login.seam"
+          class="btn-square"
+          target="_blank"
+          rel="noopener noreferrer"
+          >trt 6 (2° Grau)</a
+        >
+
+        <a
+          href="https://pje.trt8.jus.br/primeirograu/login.seam"
+          class="btn-square"
+          target="_blank"
+          rel="noopener noreferrer"
+          >trt 8 (1° Grau)</a
+        >
+
+        <a
+          href="https://pje.trt8.jus.br/segundograu/login.seam"
+          class="btn-square"
+          target="_blank"
+          rel="noopener noreferrer"
+          >trt 8 (2° Grau)</a
+        >
+
+        <a
+          href="https://pje.trt12.jus.br/primeirograu/login.seam"
+          class="btn-square"
+          target="_blank"
+          rel="noopener noreferrer"
+          >trt 12 (1° Grau)</a
+        >
+
+        <a
+          href="https://pje.trt12.jus.br/segundograu/login.seam"
+          class="btn-square"
+          target="_blank"
+          rel="noopener noreferrer"
+          >trt 12 (2° Grau)</a
+        >
+
+        <a
+          href="https://pje.trt15.jus.br/primeirograu/login.seam"
+          class="btn-square"
+          target="_blank"
+          rel="noopener noreferrer"
+          >trt 15 (1° Grau)</a
+        >
+
+        <a
+          href="https://pje.trt15.jus.br/segundograu/login.seam"
+          class="btn-square"
+          target="_blank"
+          rel="noopener noreferrer"
+          >trt 15 (2° Grau)</a
+        >
+      </main>
+
+      <footer>
+        <br />
+        <br />
+
+        <p>
+          Página de apoio interno — contém apenas atalhos para sistemas
+          públicos.
+        </p>
+      </footer>
+    </div>
+
+  
+
+  <script type="module" src="./app.js"></script>
+</body>
 </html>
+
