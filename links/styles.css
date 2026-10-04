@@ -56,6 +56,132 @@ header h1 {
 }
 
 
+
+/* Quadro de audiências em destaque */
+.trello-featured {
+    width: 100%;
+    max-width: 800px;
+    margin: 0 auto 45px;
+    min-height: 105px;
+    padding: 22px 28px;
+    display: flex;
+    align-items: center;
+    gap: 18px;
+    background: linear-gradient(135deg, #1c1c1c 0%, #242424 100%);
+    border: 1px solid var(--gold-solid);
+    border-radius: 4px;
+    color: var(--text-white);
+    text-decoration: none;
+    box-shadow: 0 0 24px rgba(212, 175, 55, 0.12);
+    transition: all 0.3s ease;
+    position: relative;
+    overflow: hidden;
+}
+
+.trello-featured::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 0;
+    bottom: 0;
+    width: 4px;
+    background: var(--gold-linear);
+}
+
+.trello-featured:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 8px 30px rgba(212, 175, 55, 0.2);
+    background: linear-gradient(135deg, #222222 0%, #2b2b2b 100%);
+}
+
+.trello-icon {
+    font-size: 2rem;
+    flex-shrink: 0;
+}
+
+.trello-content {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+    flex: 1;
+}
+
+.trello-content strong {
+    color: var(--gold-solid);
+    font-size: 1.05rem;
+    letter-spacing: 0.5px;
+}
+
+.trello-content small {
+    color: #bdbdbd;
+    font-size: 0.85rem;
+}
+
+.trello-arrow {
+    color: var(--gold-solid);
+    font-size: 1.6rem;
+    transition: transform 0.3s ease;
+}
+
+.trello-featured:hover .trello-arrow {
+    transform: translate(3px, -3px);
+}
+
+.systems-section {
+    width: 100%;
+    max-width: 800px;
+}
+
+.section-heading {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    margin-bottom: 22px;
+}
+
+.section-heading span {
+    height: 1px;
+    flex: 1;
+    background: rgba(212, 175, 55, 0.25);
+}
+
+.section-heading h2 {
+    color: var(--gold-solid);
+    font-size: 0.82rem;
+    font-weight: 500;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    white-space: nowrap;
+}
+
+.systems-section .container {
+    max-width: 800px;
+}
+
+@media (max-width: 480px) {
+    .trello-featured {
+        padding: 18px;
+        min-height: 90px;
+        gap: 12px;
+    }
+
+    .trello-icon {
+        font-size: 1.6rem;
+    }
+
+    .trello-content strong {
+        font-size: 0.9rem;
+    }
+
+    .trello-content small {
+        font-size: 0.75rem;
+    }
+
+    .trello-arrow {
+        font-size: 1.3rem;
+    }
+}
+
 .container {
     display: grid;
     grid-template-columns: repeat(4, 1fr); 
